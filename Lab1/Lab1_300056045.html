@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <link href = "styles/style.css" rel = "stylesheet" href = "style.css">
+        <title>Questionaire</title>
+
+    </head>
+
+    <body>
+        <h1 class = "center">Survey</h1>
+        <form id="myform" action="index.php" >
+        <h2 class = "center">What do you think of the UI for the <a href = "https://www1.shoppersdrugmart.ca/en/home">Shoppers Drug Mart</a> site?</h2>
+        <a href = "https://www1.shoppersdrugmart.ca/en/home"><img src = "images/shoppers.PNG" alt = "shoppers home page" class = "imgCenter"  > </a>
+         <br>
+         <br>   
+        <div class = "question">
+            <h3>Personal Information</h3>
+            <p>First Name: <input type = "text" name = "firstname"></p>
+            <p>Last Name: <input type = "text" name = "lasttname"></p>
+            <p>Email: <input type = "text" name = "email"></p>
+            <br>
+            <br> 
+        </div>
+
+        <div class="question">
+            <h3>Which menu buttons were clear and lead you to the page you expected?</h3>
+            <input name = "menu" type = "checkbox" value = "shop">
+            <label for = "shop">Shop</label><br>
+            <input name = "menu" type = "checkbox" value = "health">
+            <label for = "health">Health & Pharmacy</label><br>
+            <input name = "menu" type = "checkbox" value = "electronics">
+            <label for = "electronics">Electronics</label><br>
+            <input name = "menu" type = "checkbox" value = "promotions">
+            <label for = "promotions">Promotions</label><br>
+            <input name = "menu" type = "checkbox" value = "pc">
+            <label for = "pc">PC Optimum</label><br>
+            <input name = "menu" type = "checkbox" value = "more">
+            <label for = "more">More by Shoppers</label><br>
+            <br>
+            <br> 
+        </div>
+        <div class="question">
+            <h3>Which colour stood out to you the most?</h3>
+            <select name = "colour" id = "colour">
+                <option value = "red">Red</option>
+                <option value = "blue">Blue</option>
+                <option value = "lred">Light Red</option>
+                <option value = "lblue">Light Blue</option>
+            </select>
+            <br>
+            <br> 
+        </div>
+        <div class="question">
+            <h3>Was it easy to find the product/service you were looking for?</h3>
+            <input name = "easy" type = "radio" value = "yes">
+                <label for = "yes">Yes</label><br>
+            <input name = "easy" type = "radio" value = "no">
+                <label for = "no">No</label><br>
+            <br>
+            <br> 
+        </div>
+        <div class="question">
+            <h3>Additional Comments</h3>
+                <p><textarea name = "comments" rows = "4" cols = "36">Enter comments here.</textarea></p>
+            <br>
+            <br> 
+        </div>
+
+        <div class="question">
+            <h3>Would you like to be added to our mailing list for future promotions?</h3>
+            <select name = "promotion" id = "promotion">
+                <option value = "yes">Yes</option>
+                <option value = "no">No</option>
+            </select>
+            <br>
+            <br> 
+        </div>
+        
+        <button type="submit" class= "block">Submit</button>
+
+        <br>
+        <br> 
+        <footer>
+            <p>Site created by: Allison</p>
+        </footer>
+
+    </body>
+
+</html> 
