@@ -1,0 +1,93 @@
+/* Style sheet
+   color picker www.w3schools.com/colors/colors_picker.asp
+*/
+
+html {
+  background-color: #cadedf;
+}
+
+body {
+  background-color: #ffffff;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  font-size:18px;
+  font-family: Helvetica, sans-serif;
+}
+h1 {
+  padding-top: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Helvetica, sans-serif;
+  font-size:35px;
+}
+
+h3{
+font-family: Helvetica, sans-serif;
+font-size:22px;
+}
+
+select{
+font-size:18px;
+font-family: Helvetica, sans-serif;
+}
+
+footer{
+font-size:10px;
+font-family: Helvetica, sans-serif;
+
+}
+
+.checkboxtext{
+font-size:18px;
+font-family: Helvetica, sans-serif;
+}
+
+/* Style the tab */
+.tab {
+overflow: hidden;
+border: 1px solid rgb(255, 255, 255);
+background-color: #ffffff;
+font-family: Helvetica, sans-serif; /*change??*/
+font-size: 25; /*increase font size??*/
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+background-color: inherit;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 14px 16px;
+transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+display: none;
+padding: 6px 12px;
+border: 1px solid rgb(255, 255, 255);
+border-top: none;
+}
+
+
+
+
+
+
+
+
+
