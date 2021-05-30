@@ -3,7 +3,7 @@
 
 var products = [
 	{
-		name: "Brocoli",
+		name: "Broccoli",
         lactoseIntolerant: true,
         nutAllergy: true,
 		organic: true,
