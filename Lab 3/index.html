@@ -11,6 +11,7 @@
 
 
 <!-- Tab links, each one with an onclick event associated with it -->
+<!-- Code for checkout system inspired by https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp -->
 <div class="sidenav">
   <a id = "Client" href="#"  onclick="openInfo(event, 'cClient')"><i class="fa fa-fw fa-user"></i>Personal Information</a>
   <a id = "Products" href="#" onclick="openInfo(event, 'cProducts')"><i class="fa fa-fw fa-list"></i>Products</a>
@@ -24,7 +25,7 @@
 <div id="cClient" class="main">
   <h1>Online Grocery Store</h1>
   <h3>Personal Information</h3>
-  <p>What type of products are you looking for?</p>
+  <p>What are your dietary restrictions?</p>
 	Select all that apply:<br>
 	<br>
   <div class="checkboxes">
@@ -33,7 +34,7 @@
     <input type="checkbox" id="organicSelect" name = "organicSelect" onchange="populateListProductChoices()">Organic only</input><br>
     <input type="checkbox" id="onSaleSelect" name = "onSaleSelec" onchange="populateListProductChoices()">On Sale</input><br>
     <br><br>
-    On Sale:
+    Products On Sale:
     <select id="sOnSaleSelect" name="sOnSaleSelect" onchange="populateListProductChoices()">
       <option value="No">No</option>
       <option value="Yes">Yes</option>
@@ -58,7 +59,7 @@
 	</button>
 </div>
 
-
+<!-- Code for checkout system inspired by https://www.w3schools.com/howto/howto_css_checkout_form.asp -->
 <div id="cCart" class="main">
   <h1>Online Grocery Store</h1>
   <h3>Checkout & Delivery Form</h3>

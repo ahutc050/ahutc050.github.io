@@ -1,0 +1,16 @@
+Persona 1:
+Sam, 42, is an office worker. He is very busy and does not like wasting time standing in line for checkout. He is also very cheap and prefers to buy items on sale. 
+
+Added to the website:
+A system to choose pickup/delivery 
+	-  pickup is cheaper and he does not have to wait in line
+	- Can choose time of pickup to avoid accidently coming early and waiting
+Ability to sort by items on sale, can easily see which items are on sale in the products section
+
+Persona 2:
+Emily, 23, is wheelchair handicapped. She wants to be able to have items delivered to her, so she does not have to worry about commuting to the grocery store or asking for help to get to the store.
+
+Added to the website:
+A system to choose pickup/delivery 
+	-  delivery has an added cost but is delivered directly to the door
+	- Can choose time of delivery, can be on the lookout for delivery truck around time of arrival
