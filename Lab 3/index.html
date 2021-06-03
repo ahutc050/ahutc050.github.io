@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+  <title>Grocery Store Shop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="populateListProductChoices();openInfo(event, 'cClient')">
+
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="sidenav">
+  <a id = "Client" href="#"  onclick="openInfo(event, 'cClient')"><i class="fa fa-fw fa-user"></i>Personal Information</a>
+  <a id = "Products" href="#" onclick="openInfo(event, 'cProducts')"><i class="fa fa-fw fa-list"></i>Products</a>
+  <a id = "Cart" href="#" onclick="openInfo(event, 'cCart')"><i class="fa fa-fw fa-shopping-cart"></i>Checkout & Delivery</a>
+  <footer>
+    <p id="signature">Site by Ally</p>
+  </footer>
+</div>
+
+<!-- Tab content -->
+<div id="cClient" class="main">
+  <h1>Online Grocery Store</h1>
+  <h3>Personal Information</h3>
+  <p>What type of products are you looking for?</p>
+	Select all that apply:<br>
+	<br>
+  <div class="checkboxes">
+    <input type="checkbox" id="lactoseSelect" name = "lactoseSelect" onchange="populateListProductChoices()">Lactose Intolerant</input><br>
+    <input type="checkbox" id="nutSelect" name = "nutSelect" onchange="populateListProductChoices()">Nut Allergy</input><br>
+    <input type="checkbox" id="organicSelect" name = "organicSelect" onchange="populateListProductChoices()">Organic only</input><br>
+    <input type="checkbox" id="onSaleSelect" name = "onSaleSelec" onchange="populateListProductChoices()">On Sale</input><br>
+    <br><br>
+    On Sale:
+    <select id="sOnSaleSelect" name="sOnSaleSelect" onchange="populateListProductChoices()">
+      <option value="No">No</option>
+      <option value="Yes">Yes</option>
+    </select>
+      
+  </div>
+
+
+</div>
+
+<div id="cProducts" class="main">
+  <h1>Online Grocery Store</h1>
+  <h3>Your targeted products</h3>
+  <p>We preselected products based on your restrictions.</p>
+	 Choose items to buy:
+
+    <div id="displayProduct"></div>
+
+	 
+	 <button id="addCart" type="button" class="fbtn" onclick="selectedItems();getGrocerySelect('pickup')">
+		Add selected items to cart.
+	</button>
+</div>
+
+
+<div id="cCart" class="main">
+  <h1>Online Grocery Store</h1>
+  <h3>Checkout & Delivery Form</h3>
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form action = "/action_page.php">
+          <div class="row">
+            <div class="col-50">
+              <h4>Delivery Address</h4>
+
+              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="John Doe">
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email" placeholder="john@uottawa.ca">
+              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+              <input type="text" id="adr" name="address" placeholder="75 Laurier Ave">
+              <label for="city"><i class="fa fa-institution"></i> City</label>
+              <input type="text" id="city" name="city" placeholder="Ottawa">
+
+              <div class="row">
+                <div class="col-50">
+                  <label for ="province">Province</label>
+                  <input type="text" id = "province" name = "province" placeholder="ON">
+                </div>
+                <div class="col-50">
+                  <label for="zip">Zip</label>
+                  <input type = "text" id = "zip" name = "zip" placeholder="10001">
+                </div>
+              </div>
+            </div>
+            <div class="col-50">
+              <h4>Payment</h4>
+              <label for = "fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+              </div>
+              <label for="cname">Name on Card</label>
+              <input type="text" id="cname" name="cardname" placeholder="John Doe">
+              <label for="ccnum">Credit card number</label>
+              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+              <label for="expmonth">Exp Month</label>
+              <input type="text" id="expmonth" name="expmonth" placeholder="July">
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Exp Year</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="2021">
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id = "cvv" name = "cvv" placeholder="111"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <label>
+            <input type = "radio" id = "pickup" name = "getGrocery" onclick= "getGrocerySelect('pickup')" value = "pickup" checked>
+            <label for="pickup">Pickup</label>
+            <input type = "radio" id = "delivery" name = "getGrocery" onclick= "getGrocerySelect('delivery')" value = "delivery">
+            <label for="delivery">Delivery</label>
+            <p id="groceryPickup">Please choose a pickup time:</p>
+            <input type="time" id="gTime" name ="gTime" min="8:00" max = "21:00">
+            <small>Hours are 8am to 9pm</small>
+          </label>
+          <br><br>
+          <input type = "submit" value = "Checkout" class="btn">
+        </form>
+      </div>
+    </div>
+    <div class="col-25">
+      <div class="container">
+        <h5>Cart<span class="price" style="color:black"><b id = "checkoutAmt">0  </b><i class = "fa fa-shopping-cart"></i><b></b></span></h5>
+        <div id = "displayCart"></div>
+        <br>
+        <small>Subtotal<span id = "subtotalText" class = "price" >$0.00</span></small>
+        <br>
+        <small>Delivery Fee <span id = "pickupFee" class = "price">$0.00</span></small>
+        <div class = 'deliveryFeeText'>($5.00 + 0.15%)</div>
+        <p>Total<span id = "totalPrice" class = "price">$0.00</span></p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
