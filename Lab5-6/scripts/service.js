@@ -22,7 +22,8 @@ function validateName(nm) {
     var a = document.getElementById(nm).value;
     // This filter asks for something like (12345), so parentheses with any number (at least 1)
     // of digits
-    var filter = /^[a-zA-Z]+$/;
+    //var filter = /^[a-zA-Z]+[-. ]?$/;
+    var filter = /^[a-zA-Z\-\s]+$/i;//include spaces
     if (filter.test(a)) {
         return true;
     }
